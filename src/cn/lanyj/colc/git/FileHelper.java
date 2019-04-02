@@ -15,19 +15,18 @@ public class FileHelper {
 		try {
 			reader = new BufferedReader(new FileReader(file));
 			int size = Math.min(1024, (int) (file.length()));
+			// as long cast to int
+			if (size < 0) {
+				size = 1024;
+			}
 			char[] buf = new char[size];
 			reader.read(buf);
-			for(int i = 0; i < size; i++) {
-				if(buf[i] == 0) {
+			for (int i = 0; i < size; i++) {
+				if (buf[i] == 0) {
 					return false;
 				}
 			}
 			return true;
-//			return !reader.lines().anyMatch((line) -> {
-//				return line.chars().anyMatch((c) -> {
-//					return c == 0;
-//				});
-//			});
 		} catch (IOException e) {
 			return false;
 		} finally {
@@ -59,5 +58,5 @@ public class FileHelper {
 		}
 		return null;
 	}
-	
+
 }
