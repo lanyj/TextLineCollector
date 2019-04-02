@@ -213,7 +213,7 @@ public class GitignoreLauncher {
 	}
 
 	private static void help() {
-		System.out.println("Gitignore line collector.");
+		System.out.println("Gitignore line collector, https://github.com/lanyj/TextLineCollector");
 		System.out.println("-i: input file, default \".gitignore\"");
 		System.out.println("-ni: no input file, for colc all files");
 		System.out.println("-d: output detail, default false");
